@@ -57,7 +57,7 @@ public class EmployeeDAO implements IEmployeeDAO
 			emp.setTelephone(rs.getString("TELEPHONE"));
 			emp.setDepartmentId(rs.getString("DEPARTMENTID"));
 			emp.setDepartmentName(rs.getString("DEPARTMENTNAME"));
-			emp.setPositionId(rs.getString("POSITION"));
+			emp.setPositionId(rs.getString("POSITIONID"));
 			emp.setPositionName(rs.getString("POSITIONNAME"));
 			emp.setRegionId(rs.getString("REGIONID"));
 			emp.setRegionName(rs.getString("REGIONNAME"));
