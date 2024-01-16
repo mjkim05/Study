@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BootEx08.html</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- 추가 check~ -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+
+</head>
+<body>
+
+
+
+<div>
+	<h1>Glyphicons → Bootstrap Icons</h1>
+	<hr>
+</div>
+
+<div>
+	아이콘 : <span class="glyphicon glyphicon-heart"></span><br>
+	아이콘 : <span class="glyphicon glyphicon-home"></span><br>
+</div>
+<br><br>
+
+<!-- Ⅹ -->
+<div>
+	아이콘 : <span class="glyphicon glyphicon-heart" style="width: 200px;"></span><br>
+	아이콘 : <span class="glyphicon glyphicon-home" style="height: 200px;"></span><br>
+</div>
+<br><br>
+
+<!-- ○ -->
+<div>
+	<!-- check~!! -->
+	<!-- 글자 형태로 취급~!!!! -->
+	아이콘 : <span class="glyphicon glyphicon-heart" style="font-size: 30pt; color: red;"></span><br>
+	아이콘 : <span class="glyphicon glyphicon-home" style="font-size: 30pt; color: blue;"></span><br>
+</div>
+<br><br>
+
+<!-- Attribute Content Type → simple Type → 적용되지 않음 -->
+<div>
+	<input type="button" class="glyphicon glyphicon-qrcode"/>
+</div>
+<br><br>
+
+<!-- Simple Type -->
+<input type="button"/>
+
+<!-- Complex Type -->
+<button type="button"></button>
+<br><br>
+
+
+<!-- Attribute Content Type → Complex Type → 적용됨 -->
+<div>
+	<!-- <button type="button" class="glyphicon glyphicon-qrcode"> QR 코드 스캔</button> -->
+	<button type="button" class="btn btn-outline-info">
+		<span class="glyphicon glyphicon-qrcode"></span>
+		QR 코드 스캔
+	</button>
+</div>
+<br><br>
+
+<hr />
+
+<div class="btn-group" role="<grop></grop>">
+	<button type="button" class="btn btn-default">Left</button>
+	<button type="button" class="btn btn-default">Middle</button>
+	<button type="button" class="btn btn-default">Right</button>
+</div>
+<br><br>
+
+<div>
+	<button type="button" class="btn btn-default">Left</button>
+	<button type="button" class="btn btn-default">Middle</button>
+	<button type="button" class="btn btn-default">Right</button>
+</div>
+<br><br>
+
+<div>
+	<button type="button" class="btn btn-default">
+		<span class="glyphicon glyphicon-align-left"></span>
+	</button>
+	<button type="button" class="btn btn-default">
+		<span class="glyphicon glyphicon-align-center"></span>
+	</button>
+	<button type="button" class="btn btn-default">
+		<span class="glyphicon glyphicon-align-right"></span>
+	</button>
+</div>
+<br><br>
+
+<div class="btn-group">
+	<button type="button" class="btn btn-default">
+		<span class="glyphicon glyphicon-align-left"></span>
+	</button>
+	<button type="button" class="btn btn-default">
+		<span class="glyphicon glyphicon-align-center"></span>
+	</button>
+	<button type="button" class="btn btn-default">
+		<span class="glyphicon glyphicon-align-right"></span>
+	</button>
+</div>
+<br><br>
+
+
+
+</body>
+</html>
