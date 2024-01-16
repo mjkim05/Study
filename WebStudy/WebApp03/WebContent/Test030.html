@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test030.html</title>
+
+<style type="text/css">
+
+	*{font-family: 나눔고딕코딩; text-align: center; font-size: 15pt; font-weight: bold; color: #72a3f2;}
+	h1 {font-size: 25pt;}
+	h2 {font-size: 20pt;}
+	
+</style>
+
+<script type="text/javascript">
+	var size = 0;
+	function setIceSize()
+	{
+		var size = document.getElementsByName("iceSize");
+		var meg = "선택한 항목이 존재하지 않습니다."
+		
+		for (var i = 0; i < size.length; i++)
+		{
+			if (size[i].checked)
+			{
+				meg = "당신이 선택한 사이즈는 아이스크림 개수를 "
+					   + size[i].value + "개 선택할 수 있습니다.";
+				
+			}	
+		}
+		
+		alert(meg);
+	}
+	
+	function setIceCream(val)
+	{
+		var meg = "";
+		var flag = true; 
+		var setSize = sizeSet();
+		//var size = 0;
+	
+		if (val.checked)
+		{
+			size++;
+
+			if (size > setSize)
+			{
+				alert("사이즈를 초과하셨습니다.");
+				val.checked = false;
+				size--;
+			}
+		}
+		else
+		   size--;
+	}
+
+	function sizeSet()
+	{
+		var sizeStr = document.getElementsByName("iceSize");
+		var iceSize = 0;
+
+		for (var i = 0; i < sizeStr.length; i++)
+		{
+			if (sizeStr[i].checked)
+			{
+				iceSize = Number(sizeStr[i].value);
+			}
+		}
+
+		return iceSize;
+
+	}
+</script>
+
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<!-- 사이즈 보다 많이 고르면 선택 개수 초과 확인 마지막으로 누른거 리셋 -->
+
+<div>
+	<h2>아이스크림 주문🍦🍦</h2>
+</div>
+	<form>
+		--- 사이즈  선택 --- <br><br>
+		<label> <input type="radio" name = "iceSize" id = "a1" value="1" onclick="setIceSize()"> 싱글 </label>
+		<label> <input type="radio" name = "iceSize" id = "b1" value="2" onclick="setIceSize()"> 더블 </label>
+		<label> <input type="radio" name = "iceSize" id = "c1" value="3" onclick="setIceSize()"> 파인트 </label>
+		<label> <input type="radio" name = "iceSize" id = "d1" value="4" onclick="setIceSize()"> 쿼터 </label>
+		<label> <input type="radio" name = "iceSize" id = "e1" value="5" onclick="setIceSize()"> 패밀리 </label>
+		<label> <input type="radio" name = "iceSize" id = "f1" value="6" onclick="setIceSize()"> 하프갤런 </label>
+		<br><br>
+		
+		--- 종류 선택 --- <br><br>
+		<label><input type="checkbox" name = "iceCream" id = "a" value="엄마는 외계인" onclick="setIceCream(this)"> 엄마는외계인 </label>
+		<label><input type="checkbox" name = "iceCream" id = "b" value="레인보우샤페트" onclick="setIceCream(this)"> 레인보우샤베트 </label>
+		<label><input type="checkbox" name = "iceCream" id = "c" value="민트초코" onclick="setIceCream(this)"> 민트초코 </label>
+		<br>
+		
+		<label><input type="checkbox" name = "iceCream" id = "d" value="바람과 함께 사라지다" onclick="setIceCream(this)"> 바람과함께사라지다 </label>
+		<label><input type="checkbox" name = "iceCream" id = "e" value="애플민트" onclick="setIceCream(this)"> 애플민트 </label>
+		<label><input type="checkbox" name = "iceCream" id = "f" value="초코나무숲"onclick="setIceCream(this)"> 초코나무숲 </label>
+		<br>
+		
+		<label><input type="checkbox" name = "iceCream" id = "g" value="피스타치오아몬드" onclick="setIceCream(this)"> 피스타치오아몬드 </label>
+		<label><input type="checkbox" name = "iceCream" id = "h" value="아몬드봉봉" onclick="setIceCream(this)"> 아몬드봉봉 </label>
+		<label><input type="checkbox" name = "iceCream" id = "i" value="요거트31" onclick="setIceCream(this)"> 요거트31 </label>
+		<br>
+		
+		<label><input type="checkbox" name = "iceCream" id = "j" value="체리쥬빌레" onclick="setIceCream(this)"> 체리쥬빌레 </label>
+		<label><input type="checkbox" name = "iceCream" id = "k" value="슈팅스타" onclick="setIceCream(this)"> 슈팅스타 </label>
+		<label><input type="checkbox" name = "iceCream" id = "l" value="사랑에빠진딸기" onclick="setIceCream(this)"> 사랑에빠진딸기 </label>
+		<br>
+		
+		<label><input type="checkbox" name = "iceCream" id = "m" value="뉴욕치즈케이크" onclick="setIceCream(this)"> 뉴욕치즈케이크 </label>
+		<label><input type="checkbox" name = "iceCream" id = "n" value="쿠앤크" onclick="setIceCream(this)"> 쿠앤크 </label>
+		<label><input type="checkbox" name = "iceCream" id = "o" value="베리베리스트로베리" onclick="setIceCream(this)"> 베리베리스트로베리 </label>
+		<br>
+	
+	
+	
+	</form>
+
+
+</body>
+</html>

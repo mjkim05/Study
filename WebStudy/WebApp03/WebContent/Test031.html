@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test031.html</title>
+
+<style type="text/css">
+
+	*{font-family: 나눔고딕코딩; font-size: 15pt; font-weight: bold; color: #72a3f2}
+	h1 {font-size: 25pt;}
+	h2 {font-size: 20pt;}
+	input.txt {width: 130px;} 
+	input.btn {background-color: #f5f6f9; border: none; padding: 10px;}
+
+</style>
+
+<script type="text/javascript">
+
+	// select 를 다루어보기 위한 테스트 함수 정의
+	function selectTest()
+	{
+		// 확인
+		//alert("함수호출~~!!");
+		
+		// 첫 번째 방법
+		
+		//var positionStr = document.getElementById("userPosition").value;	
+		//alert(positionStr);
+		
+		/* // 두 번째 방법
+		var positionObj = document.getElementById("userPosition");	
+		var positionOptions = positionObj.options;		// 배열
+		var positionMsg = "";
+		
+		// 확인
+		//alert(positionOptions);
+		//--==>> [object HTMLOptionsCollection] → 자바스크립트 배열
+		
+		//alert(positionOptions.length);
+		//--==>> 4
+		
+		for (var i=0; i<positionOptions.length; i++)	// 0 1 2 3
+		{
+			// 확인
+			//alert(positionOptions[i].selected);
+			//--==>> 선택된 옵션 항목에 따라 true / false 형태로 확인
+			
+			if (positionOptions[i].selected)
+			{
+				// 확인 
+				// alert(i);
+				
+				// 단일 선택
+				//positionMsg = positionOptions[i].value;
+				//break;
+				
+				// 다중 선택
+				positionMsg = positionOptions[i].value + " ";
+				
+			}	
+		}
+		
+		alert(positionMsg); */
+		
+		// 세 번째 방법
+		/* 
+		var positionObj = document.getElementById("userPosition");
+		
+		// 확인
+		// alert(positionObj.selectedIndex);
+		// 부장 → 0, 과장 → 1, 대리 → 2, 사원 → 3
+		
+		// 확인 
+		//alert(positionObj.options[2].value);	
+		//--==> cde(대리)
+		//alert(positionObj.options[0].value);
+		//--==>> zaq(부장)
+		
+		
+		//positionMsg = positionObj.options[positionObj.selectedIndex].value;
+		//								  -------------------------  -----
+		//									선택된 값의 인덱스 		 의 값
+																	
+		
+		// alert(positionMsg); */
+	}
+	
+	function addMember()
+	{
+		
+		var name = document.getElementById("userName").value;
+		var ssn = document.getElementById("userSsn").value;
+		
+		// 첫 번째 방법 (지역)
+		var city = document.getElementById("userCity").value;
+		
+		// 두 번째 방법 (부서)
+		var depObj = document.getElementById("userDepartment");
+		var depOptions = depObj.options;
+		var dep = " ";
+		
+		for (var i=0; i<depOptions.length; i++)
+		{
+			if (depOptions[i].selected)
+			{
+				dep = depOptions[i].value;
+				break;
+			}	
+		}
+		
+		// 세 번째 방법 (직위)
+		var positionObj = document.getElementById("userPosition");
+		var position = " ";
+		
+		position = positionObj.options[positionObj.selectedIndex].value;
+		
+		//alert (position);
+		//alert (dep);
+		//alert (city);
+		
+		var basicPay = document.getElementById("userBasicPay").value;
+		
+		// 테이블 그리기 --------------------------------------------------------------
+		
+		var createTable = document.getElementById("memberList");
+		var trNode = document.createElement("tr");
+		
+		trNode.appendChild(createNode(name));
+		trNode.appendChild(createNode(ssn));		
+		trNode.appendChild(createNode(city));
+		trNode.appendChild(createNode(dep));
+		trNode.appendChild(createNode(position));
+		trNode.appendChild(createNode(basicPay));
+		
+		createTable.appendChild(trNode);
+		
+		// --------------------------------------------------------------- 테이블 그리기
+		
+		formClear();
+		
+		//document.getElementById("listForm").reset();
+		document.forms.reset();
+		
+		document.getElementById("userName").focus();
+	}
+	
+	function createNode(val)
+	{	
+		var textNode = document.createTextNode(val);
+		var tdNode = document.createElement("td");
+		tdNode.appendChild(textNode);
+		
+		return tdNode; 		// check~~ td에 붙이기!!
+		
+	}
+
+	function formClear()
+	{
+		document.getElementById("userName").value = " ";
+		document.getElementById("userSsn").value = " ";
+		var cityObj = document.getElementById("userCity");
+		cityObj.options[0].selected = true;
+		var buseoObj = document.getElementById("userDepartment");
+		buseoObj.options[3].selected = true;
+		var jikwiObj = document.getElementById("userPosition");
+		jikwiObj.options[3].selected = true;
+		document.getElementById("userBasicPay").value = " ";
+		
+	}
+
+</script>
+
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<h2>선택목록(select) 다루기</h2>
+	
+	<form>
+		<table>
+			<tr>
+				<td>이름</td>		
+				<td>
+					<input type="text" id ="userName">
+				</td>	
+			</tr> 
+			<tr>
+				<td>주민번호</td>		
+				<td>
+					<input type="text" id ="userSsn">
+				</td>	
+			</tr> 
+			<tr>
+				<td>지역</td>
+				<td>
+					<!-- <input type="text" id = "userCity"> -->
+					<select id = "userCity">
+						<option value="1123(서울)">서울</option>
+						<option value="3328(대전)">대전</option>
+						<option value="4289(광주)">광주</option>
+						<option value="5832(대구)">대구</option>
+					</select>
+				</td>			
+			</tr>
+			
+			<tr>
+				<td>부서</td>
+				<td>
+					<!-- <input type="text" id = "userDepartment"> -->
+					<select id = "userDepartment">
+						<option value="9987(개발부)">개발부</option>					
+						<option value="9986(인사부)">인사부</option>					
+						<option value="9985(자재부)">자재부</option>					
+						<option value="9984(영업부)">영업부</option>					
+						<option value="9983(총무부)">총무부</option>					
+					
+					</select>
+				</td>			
+			</tr>
+			<tr>
+				<td>직위</td>
+				<td>
+					<!-- <input type="text" id = "userPosition"> -->
+					<select id = "userPosition">
+						<option value="zaq(부장)">부장</option>
+						<option value="xsw(과장)">과장</option>
+						<option value="cde(대리)">대리</option>
+						<option value="bgt(사원)">사원</option>
+					</select>
+									
+				</td>			
+			</tr>
+			<tr>
+				<td>기본급</td>
+				<td>
+					<input type="text" id = "userBasicPay">				
+				</td>			
+			</tr>
+			<td colspan="2"; >
+			<br>
+			<!-- <input type="button" value="직원 추가" class="btn" style="width: 48%;" onclick="selectTest()"> -->
+			<input type="button" value="직원 추가" class="btn" style="width: 48%;" onclick="addMember()">
+			<input type="reset" value="입력 취소" class="btn" style="width: 48%;">
+			</td>
+		</table>
+		<br>
+		
+		<table id = "memberList">
+			<tr>		
+				<td>이름</td>
+				<td>주민번호</td>
+				<td>지역</td>
+				<td>부서</td>
+				<td>직위</td>
+				<td>기본급</td>
+			</tr>
+			
+		</table>
+	</form>
+	
+</div>
+
+</body>
+</html>

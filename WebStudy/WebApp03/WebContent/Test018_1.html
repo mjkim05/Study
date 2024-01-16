@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test018.html</title>
+
+<style type="text/css">
+	
+	*{font-family: 나눔고딕코딩; text-align: center; font-size: 15pt; font-weight: bold; color: #72a3f2}
+	h1 {font-size: 25pt;}
+	input.txt {width: 130px;} 
+	span {display: inline-block; width: 230px;}
+	input.result{width: 200px;}
+	input.btn {background-color: #f5f6f9; border: none; padding: 10px;}
+
+</style>
+
+<script type="text/javascript">
+
+	function actionPerformed()
+	{
+		//alert("함수호출 확인");	
+		var korStr = document.getElementById("kor").value;
+		var engStr = document.getElementById("eng").value;
+		var matStr = document.getElementById("mat").value;
+		
+		var nKor = parseInt(korStr);
+		var nEng = parseInt(engStr);
+		var nMat = parseInt(matStr);
+		
+		var nTot = 0;
+		var nAvg = 0;
+		var resultStr = "";
+		
+		nTot = nKor + nEng + nMat;
+		
+		// 확인 
+		//alert(nTot);
+		
+		nAvg = Math.round(nTot / 3);
+		
+		document.getElementById("avg").value = nAvg;
+		
+		if (nKor>=40 && nEng >=40 && nMat>=40 && nAvg>=60)
+			resultStr = "합격!>ㅜ<";
+		else if(nAvg >=60)
+			resultStr = "과락....아깝네요ㅠ";
+		else 
+			resultStr = "불합격 분발하길^^!"
+			
+		document.getElementById("result").value = resultStr;	
+	}
+
+</script>
+
+</head>
+<body>
+
+<!--
+	사용자로부터 이름, 국어점수, 영어점수, 수학점수를 입력받아
+	평균점수와 판정결과를 출력하는 페이지를 구성한다.
+	판정 결과는 합격, 과락, 불합격 중 하나로 처리한다.
+	
+	합격은 모든 과목 점수가 40점 이상이면서 평균 점수가 60점 이상인 경우,
+	과락은 평균이 60점 이상이지만 한 과목이라도 과목 점수가 40점 미만의 과목이 존재하는 경우 
+	불합격은 평균 점수가 60점 미만인 경우로 처리한다.
+	
+	HTML, CSS, Javascript 활용한다.
+	
+	페이지 레이아웃
+	-----------------------------------------------------------------------
+	
+	이름 		[           ]
+	국어점수	[			]
+	영어점수	[			]
+	수학점수	[			]
+	
+	<처리 결과 확인>
+	
+	   평균		판정결과 
+	[	   	]	[		]
+	
+	-----------------------------------------------------------------------
+ -->
+
+<div>
+	<h1>성적 프로그램</h1>
+	<hr>
+</div>
+
+
+<div>
+	<br>
+	<form>
+		이&nbsp;&nbsp;&nbsp;&nbsp;름 <input type="text"  class="txt"	id="name"> <br>
+		국어점수 <input type="text" class="txt" id="kor"> <br>
+		영어점수 <input type="text" class="txt" id="eng"> <br>
+		수학점수 <input type="text" class="txt" id="mat"> 
+		<br><br>
+		<input type="button" class="btn" id="btn" value="처리 결과 확인" onclick="actionPerformed()">
+		<br><br>
+		<span>평균</span> <span>판정결과</span>
+		<br><br>
+		<input type="text" class="result" id="avg" disabled="disabled">
+		<input type="text" class="result" id="result" disabled="disabled">
+		<hr>
+		<br>
+	</form>
+</div>
+
+</body>
+</html>

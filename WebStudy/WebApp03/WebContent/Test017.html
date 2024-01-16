@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test017.html</title>
+
+<style type="text/css">
+	
+	* {text-align: center; font-size: 15pt; font-weight: bold; color:#72a3f2; }
+	h1 {color: #72a3f2; font-family: 나눔고딕코딩; font-size: 30pt}
+	input.money {width: 80px;}
+	input.btn {color: #72a3f2; background-color:#f5f6f9;  width:80px; border: none; }
+	input.btn:hover {color: #ea8484;}
+	
+</style>
+
+<script type="text/javascript">
+
+	function moneyResult()
+	{
+		var money = Number(document.getElementById("num1").value);
+		
+		// 테스트
+		//alert(money);
+		
+		document.getElementById("tot").value = money;
+		
+		var m500 = parseInt(money/500) ;
+		
+		document.getElementById("m500").value = m500 ; 
+		
+		var m100 = money % 500;
+		
+		document.getElementById("m100").value = parseInt(m100/100);
+		
+		var m50 = parseInt(m100 % 100);
+		
+		document.getElementById("m50").value = parseInt(m50/50);
+		
+		var m10 = parseInt(m50 % 50)/10;
+		
+		document.getElementById("m10").value = parseInt(m10);
+		
+	}
+
+
+</script>
+
+</head>
+<body>
+
+<!--
+  	특정 금액 (10원~990원)을 사용자로부터 입력 받아
+  	화페 단위로 구분하여 출력하는 페이지를 구성한다.
+  	화페 단위는 편의상 오백원, 백원, 오십원, 십원으로 구분한다
+  	HTML,CSS,Javascript 를 활용한다.
+  	
+  	페이지 기본 레이아웃 구성
+  	--------------------------------------------------------------------	
+	
+	금액 	[			] 원
+	
+	<결과> <취소>
+	
+	총액 	[			] 원
+	오백원			[	] 개
+	백원			[	] 개
+	오십원			[	] 개
+	십원			[	] 개
+	
+  	--------------------------------------------------------------------	
+  
+  -->
+  
+  <div>
+  	<h1>자바스크립트 활용</h1>
+  	<hr>
+  </div>
+  
+  <div>
+  	<form>
+  		<br>
+  		금액 <input type="text" id="num1" class="money" > 원
+  		<br><br>
+  		<input type="button" id="result" class="btn" value="결과" onclick ="moneyResult()">
+  		<input type="reset" class="btn" value="취소">
+		<br><br>
+  		총&nbsp;&nbsp;&nbsp;액 <input type="text" id="tot" class="money" disabled="disabled" > 원 <br>
+  		오백원 <input type="text" id="m500" class="money" disabled="disabled"> 개 <br>
+  		백&nbsp;&nbsp;&nbsp;원 <input type="text" id="m100" class="money" disabled="disabled"> 개 <br>
+  		오십원 <input type="text" id="m50" class="money" disabled="disabled"> 개 <br>
+  		십&nbsp;&nbsp;&nbsp;원 <input type="text" id="m10" class="money" disabled="disabled"> 개 
+  		<br><br>
+  		
+  		<hr>
+  	
+  	</form>
+  	
+  </div>
+  
+
+</body>
+</html>

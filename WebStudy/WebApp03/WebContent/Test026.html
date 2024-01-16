@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test026.html</title>
+
+<style type="text/css">
+
+	*
+	{
+		font-size: 15pt; font-family: 나눔고딕코딩; font-weight: bold;
+	}
+	input.reTxt {width: 850px;}
+	
+	
+	
+	h1 {font-size: 35pt;}
+	
+	
+</style>
+<script type="text/javascript">
+
+	function actionResult()
+	{
+		//alert ("함수 연결 확인");
+		var numStr = document.getElementById("input").value;
+		
+		var num = parseInt(numStr);
+		
+		// 확인
+		//alert (num);
+		
+		if (num > 4 || num < 1)
+		{
+			alert("잘못 입력 하셨습니다. 다시 입력해주세요!");
+			return;
+		}
+	
+		var rd = Math.floor((Math.random() * 3) + 1);
+		
+		//alert (num2);
+		
+		var numStr = "";
+		var rdStt = "";
+		
+		if (num == 1)
+			numStr = "가위";
+		else if (num == 2)
+			numStr = "바위";
+		else 	
+			numStr = "보";
+
+		if (rd == 1)
+			rdStr = "가위";
+		else if (rd == 2)
+			rdStr = "바위";
+		else 	
+			rdStr = "보";
+		
+		//alert (numStr);
+		//alert (rdStr);
+		
+		var result = "기본값";
+		
+		if ((num == 1 && rd == 3) || (num == 2 && rd == 1) || (num == 3 && rd == 2))
+			result = " 사용자 : " + numStr + " 컴퓨터 : " + rdStr + " (☞'ヮ')☞ 사용자가 이겼습니다. 축하해요^.^ 빠라밤 🎉🎉";
+		else if (num == rd)
+			result = " 사용자 : " + numStr + " 컴퓨터 : " + rdStr + " (☞'ヮ')☞ 무승부입니다. 다시 해보세요~>ㅜ<";
+		else 
+			result = " 사용자 : " + numStr + " 컴퓨터 : " + rdStr + " (☞'ヮ')☞ 삐삐비빅 컴퓨터 승리 삐리삑";
+		
+		//alert(result);
+		document.getElementById("result").value = result; 
+	}
+</script>
+
+
+
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+	<!--
+	가위, 바위, 보 게임을 구성한다.
+	HTML, CSS, JavaScript 를 활용한다.
+	자바스크립트 난수 발생 함수를 찾아 활용한다.
+	
+	→ http://w3schools.com
+	→ http://koxo.com
+
+	
+	페이지 레이아웃
+	---------------------------------------------------------------------
+	
+	입력 (1. 가위 2. 바위 3. 보)		[	2	] <게임 결과 확인>
+	
+	[	사용자 : 바위	컴퓨터 : 보 → 컴퓨터가 이겼습니다.  ]
+	
+	
+	---------------------------------------------------------------------
+	-->
+	
+	<div>
+		입력 (1. 가위 2. 바위 3. 보) <input type="text" id = "input"  class = "txt"> 
+		<input type = "button" id = "resultBtn" value = "게임 결과 확인" class = "btn" onclick="actionResult()"> 
+		<br><br>
+		<input type = "text" id = "result" class= "reTxt" disabled="disabled">
+		<br><br>
+	
+	
+	
+	</div>
+	
+	
+
+</body>
+</html>

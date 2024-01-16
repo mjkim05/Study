@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test032.html</title>
+
+<style type="text/css">
+
+	* {color: #223322; font-family:맑은 고딕;  font-weight: bold;}
+	.btn {font-size: 17px;}
+	.btn:hover {color: orange; background-color: #334433;}
+	.btn:active {color: red;}
+	.txt {width: 220px;}
+
+</style>
+
+<script type="text/javascript">
+
+	function searchAddr()
+	{
+		//alert("함수호풀~~");
+		
+		// ※ window.open();
+		//    - 형식 및 구조
+		//      var result = window.open(url,name,spec,replace);
+		//
+		//      ·result 
+		//		새로 생성된 창의 객체가 반환된다.
+		//      창 객체 생성이 정상적으로 이루어지지 않을 경우 null 을 반환한다.
+		
+		//      ·url
+		//        새창으로 요청할 주소.
+		//      ·name
+		//        새 창의 속성 또는 이름.
+		//        (_blank / _parent / _self / _top / 임의의 이름)
+		//		·spec
+		//        새 창의 스펙 설정.
+		//      ·replace (생략 가능! 따로 선언하지 않으면 그냥 남는것이 기본값)
+		//        히스토리 목록에 새 창을 만들지의 여부 지정.
+		
+		// window (BOM 객체중 그나마 사용빈도가 높다.)
+		window.open("Test033.html", "Test", "width=500, height=300 ")
+		
+	}
+
+</script>
+
+</head>
+<body>
+<div>
+		<h1>자바스크립트 활용</h1>
+		<hr>
+</div>
+
+<div>
+	<h2>주소 검색</h2>
+	
+	<form>
+		기본주소
+		<input type="text" id = "addr1" readonly="readonly" class="txt">
+		<input type="button" value="검색" class="btn" onclick="searchAddr()">
+		<br><br>
+		
+		상세주소
+		<input type="text" id ="addr2" class="txt">
+		<br><br>
+		
+		<span id = "txt1" style ="color: red; font-weight:bold;">
+			시각적으로 확인 할 수 있도록 확인
+		</span>
+	
+	</form>
+	
+</div>
+
+	
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test027.html</title>
+
+<script type="text/javascript">
+
+	function actionLotto()
+	{
+		//alert("함수 호출 확인");
+		
+		// 칠판 지우기 (리셋)
+		document.getElementById("resultArea").value = "";
+		
+		var count = Number(document.getElementById("txtCount").value);
+		var arr = new Array();
+		var str = "";
+		
+		for (var i=0; i<count; i++)
+		{
+			for (var j=0; j<6; j++)
+			{
+				var rd = parseInt(Math.random() * 45) + 1;
+				arr[j] = rd;
+				
+				for (var n=0; n<j; n++)
+				{
+					if(arr[n]==rd)
+					{
+						j--;
+						break;
+					}
+				}
+				
+			}
+				 
+				for (var i = 0; i < arr.length-1; i++)
+				{
+					for (var j = 1; j <arr.length-i; j++)
+					{
+						arr[i] = arr[i] ^ arr[i + j];
+						arr[i + j] = arr[i + j] ^ arr[i];
+						arr[i] = arr[i] ^ arr[i + j];
+					}
+				}
+
+			//str += "\n";
+			document.getElementById("resultArea").value += arr + "\n";
+		}
+		
+	}
+</script>
+
+
+</head>
+<body>
+
+<div>
+	<h1>자바 스크립트 활용</h1>
+	<h1>
+</div>
+
+<!--
+	로또 번호 (1~45) 를 중복되지 않는 정수 6개를 생성하여 
+	출력해주는 페이지를 구현한다.
+	HTML, CSS, Javascript 를 활용한다.
+	난수 발생 함수를 활용한다.
+	번호순으로 오름차 순으로 정렬하여 출력할 수 있도록 한다.
+	사용자가 주문한 장수 만큼 출력할 수 있도록 한다.
+	
+	페이지 레이아웃
+	-------------------------------------------------------------------
+	
+	로또 		[ 3	장] <주문하기>			#txtCount
+				  └ text      └ button	
+	결과
+	---------------------- → textarea 		#resultArea
+	1 	2 	5  8  10  12
+	6  13  22  23  29  31
+	2  3  21  34   42  44
+	----------------------
+	-------------------------------------------------------------------
+  -->
+
+<div>
+	 <span>로또</span> <input type="text" id = "txtCount" class = "txt">
+	 <input type="button" id = "btn" class = btn value = "주문하기" onclick="actionLotto()">
+	 <br><br>
+	 결과 <br><br>
+	 <textarea rows="20"  cols="50"   id = "resultArea" ></textarea>
+	 
+</div>
+
+</body>
+</html>

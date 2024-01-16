@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test25.html</title>
+
+<style type="text/css">
+
+	* {color: #223322;}
+	input {font-family: 나눔고딕코딩; font-weight: bold;}
+	input.btn {font-weight: bold; font-family: 맑은고딕}
+	.btn {width: 200px;}
+	.txt {width: 67px; text-align: center; font-weight: bold;}
+	table {padding: 25px;}
+	td {text-align: right; background-color: #ffeeff;}
+	th {width: 40px;}
+
+</style>
+
+<script type="text/javascript">
+
+	function actionCalendar()
+	{
+		var year = Number(document.getElementById("txtYear").value);
+		var month = Number(document.getElementById("txtMonth").value);
+		var arrDay = [31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+		// 윤년 평년 일수 지정
+		if (year%4==0 && year%100!=0 || year%400==0)
+			arrDay[1] = 29;
+		else
+			arrDay[1] = 28;
+		
+		
+		// 날수 계산
+		var nalsu = (year-1)*365 + parseInt((year-1)/4) - parseInt((year-1)/100) + parseInt((year-1)/400);
+		
+		for(var i=0; i<month-1; i++)
+			nalsu += arrDay[i];
+		
+		// 테이블, tr 노드 객체 생성		
+		var tableNode = document.getElementById("calendarTbl");
+		var trNode = document.createElement("tr");
+		
+		// td 노드 생성과 tr로 조립, table에 조립 반복
+		for(var i=1, n=1; n<=arrDay[month-1];i++)
+		{
+			if ((i-1)<=nalsu%7 && nalsu%7!=6)
+				trNode.appendChild(createNode(" "));
+			else
+				trNode.appendChild(createNode(n++));
+			
+			if (i%7==0||n>arrDay[month-1])
+			{
+				tableNode.appendChild(trNode);
+				trNode = document.createElement("tr");
+			}
+		}
+	}
+	
+	// td 노드 생성 함수
+	function createNode(val)
+	{
+		var tdNode = document.createElement("td");
+		var textNode = document.createTextNode(val);
+		tdNode.appendChild(textNode);
+		
+		return tdNode;
+	}
+
+</script>
+
+</head>
+<body>
+
+<div>
+	<h1>테이블 동적 생성으로 만년달력 그리기</h1>
+	<hr>
+</div>
+
+<div>
+	<form>
+		<br>
+		
+		<input type="text" id="txtYear" class="txt"> 년
+		<input type="text" id="txtMonth" class="txt"> 월
+		<br><br>
+		
+		<input type="button" class="btn" value="만년달력 그리기" onclick="actionCalendar()">
+		<br><br>
+		
+		<table border="1" id="calendarTbl">
+			<tr>
+				<th>일</th>
+				<th>월</th>
+				<th>화</th>
+				<th>수</th>
+				<th>목</th>
+				<th>금</th>
+				<th>토</th>
+			</tr>
+		</table>
+	</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test021.html</title>
+
+<script type="text/javascript">
+	
+	function actionArray()
+	{
+		var arr1 = new Array();
+		var str = document.getElementById("txt01").value;
+		
+		//var arr1 = str.split(" ");
+		arr1 = str.split(" ");
+		var arr2 = new Array();
+		for(var i=0; i<arr1.length; i++)
+			arr2[i] = Number(arr1[i]);
+		
+		for (var n = 0; n < arr1.length; n++)
+		{
+			document.getElementById("txt02").value += arr1[n] + " ";		
+		}
+		
+		for (var i = 0; i < arr1.length; i++)
+		{
+			for (var j = 1; j < arr1.length; j++)
+			{
+				arr2[i] = arr2[i]^arr2[i+j];
+				arr2[i+j] = arr2[i+j]^arr2[i];
+				arr2[i] = arr2[i]^arr2[i+j];
+			}
+			
+			document.getElementById("txt03").value = arr2[(arr2.length)-1];
+		}
+		
+	}
+	
+	function eunha()
+	{
+		var str = document.getElementById("txt1");
+		var arr = str.split(" ");
+		var max = arr[0];
+		
+		for(var i=0; i<arr.length; i++)
+		{
+			document.getElementById("txt2").value += arr[i];
+			if (Number(arr[i])>max)
+				max = Number(arr[i]);
+		}
+		
+		document.getElementById("txt3").value = max;
+	}
+
+</script>
+
+
+
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<!--
+	사용자로부터 임의의 정수를 임의의 개수만큼 입력받고,
+	그 내용으로 배열을 구성하여,
+	구성한 정수들 중 가장 큰 수를 출력해줄 수 있는 페이지를 구현한다.
+	HTML, CSS, Javascript 활용한다.
+	
+	페이지 레이아웃
+	-------------------------------------------------------------------------
+	
+	데이터 입력(공백구분) [21 86 258 43 7] → 배열 구성		→ txt01
+	
+		<결과 확인>						
+		
+	- 전체 출력 [  21 86 258 43 7	]						→ txt02
+	- 가장 큰 수 			[  258	] 						→ txt03
+	
+	-------------------------------------------------------------------------
+ -->
+ 
+ 
+ <div>
+ 	<h1> 배열 중 가장 큰 수 찾기</h1>
+ 	<hr>
+ </div>
+ 
+ <div>
+ 	데이터 입력 (공백 구분) <input type="text" id="txt01" class="txt"> 
+ 	<br><br>
+	<input type="button" id = "result" class="btn" value="결과 확인" onclick="actionArray()">
+ 	<br><br>
+ 	- 전체 출력 <input type="text" id="txt02" class="txt" disabled="disabled">
+ 	<br>
+ 	<span>- 가장 큰 수 </span> <input type="text" id="txt03" class="txt">
+ 	<br>
+ 
+ </div>
+ 
+
+</body>
+</html>
