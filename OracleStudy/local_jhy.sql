@@ -1,0 +1,10 @@
+INSERT INTO EMP1 VALUES (7566, 'JONES', 'MANAGER', '7839', to_date('02-04-1981','dd-mm-yy'), 2975, NULL, 20);
+INSERT INTO EMP1 VALUES (7654, 'MARTIN', 'SALESMAN', '7698', to_date('28-09-1981','dd-mm-yy'), 1250, 1400, 30);
+INSERT INTO EMP1 VALUES (7698, 'BLAKE', 'MANAGER', '7839', to_date('01-05-1981','dd-mm-yy'), 2850, NULL, 30);
+
+
+
+commit;
+
+SELECT *
+FROM EMP1;
