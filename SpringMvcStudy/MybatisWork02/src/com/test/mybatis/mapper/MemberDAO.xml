@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 인터페이스 경로 지정 -->
+<mapper namespace="com.test.mybatis.IMemberDAO">
+
+	<!-- id 는 메소드 이름 resultType 는 반환 타입-->
+	<select id="list" resultType="com.test.mybatis.MemberDTO">
+		SELECT MID, NAME, TELEPHONE
+		FROM TBL_MEMBERLIST
+		ORDER BY MID
+	</select>
+	
+	<select id="count" resultType="java.lang.Integer">
+		SELECT COUNT(*) AS COUNT
+		FROM TBL_MEMBERLIST
+	</select>
+
+	<insert id="add">
+		INSERT INTO TBL_MEMBERLIST (MID, NAME, TELEPHONE) 
+		VALUES (MEMBERLISTSEQ.NEXTVAL , #{name}, #{telephone})	
+	</insert>
+	
+	<!-- 삭제 기능 처리 ③ -->
+	<delete id="delete">
+		DELETE
+		FROM TBL_MEMBERLIST
+		WHERE MID = #{mid}
+	</delete>
+	
+	
+
+</mapper>
