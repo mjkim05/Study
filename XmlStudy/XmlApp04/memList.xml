@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD 작성 -->
+<!DOCTYPE memList 
+[
+<!ELEMENT memList (memberInfo+)>
+<!ELEMENT memberInfo (name, telephone, curriculumn, zipcode, addr, age, food?)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT telephone (#PCDATA)>
+<!ELEMENT curriculumn (sub+)>
+<!ELEMENT sub (#PCDATA)>
+<!ELEMENT zipcode (#PCDATA)>
+<!ELEMENT addr (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT food (like, hate)>
+<!ELEMENT like (#PCDATA)>
+<!ELEMENT hate (#PCDATA)>
+<!ATTLIST memberInfo mid CDATA #REQUIRED>
+
+]>
+
+
+<!-- memList.xml -->
+
+<memList>
+	<memberInfo mid ="1">
+		<name>김민지</name>
+		<telephone><![CDATA[010-7159-4231]]></telephone>
+		<curriculumn>
+			<sub>JAVA EE</sub>
+			<sub>ORACLE</sub>
+			<sub><![CDATA[Servlet&JSP]]></sub>
+			<sub>XML</sub>
+		</curriculumn>
+		<zipcode>01234</zipcode>
+		<addr>경기도 하남시 대청로</addr>
+		<age>27</age>
+		<food>
+			<like>떡볶이</like>
+			<hate>매운거</hate>
+		</food>
+	</memberInfo>	
+	
+	<memberInfo mid ="2">
+		<name>노은하</name>
+		<telephone><![CDATA[010-1234-4567]]></telephone>
+		<curriculumn>
+			<sub>JAVA EE</sub>
+			<sub>ORACLE</sub>
+			<sub><![CDATA[Servlet&JSP]]></sub>
+			<sub>XML</sub>
+		</curriculumn>
+		<zipcode>23456</zipcode>
+		<addr>경기도 부천시 원미로</addr>
+		<age>26</age>
+		<food>
+			<like>부침개</like>
+			<hate>해산물</hate>
+		</food>
+	</memberInfo>
+	
+	<memberInfo mid="3">
+		<name>김경태</name>
+		<telephone><![CDATA[010-7894-5612]]></telephone>
+		<curriculumn>
+			<sub>JAVA EE</sub>
+			<sub>ORACLE</sub>
+			<sub><![CDATA[Servlet&JSP]]></sub>
+			<sub>XML</sub>
+		</curriculumn>
+		<zipcode>45610</zipcode>
+		<addr>인천광역시 서구 청라</addr>
+		<age>19</age>
+	</memberInfo>
+	
+	<memberInfo mid="4">
+		<name>박가영</name>
+		<telephone><![CDATA[010-4561-7894]]></telephone>
+		<curriculumn>
+			<sub>JAVA EE</sub>
+			<sub>ORACLE</sub>
+			<sub><![CDATA[Servlet&JSP]]></sub>
+			<sub>XML</sub>
+		</curriculumn>
+		<zipcode>12345</zipcode>
+		<addr>인천광역시 부평구</addr>
+		<age>19</age>
+	</memberInfo>
+	
+	<memberInfo mid="5">
+		<name>정현욱</name>
+		<telephone><![CDATA[010-1234-4856]]></telephone>
+		<curriculumn>
+			<sub>JAVA EE</sub>
+			<sub>ORACLE</sub>
+			<sub><![CDATA[Servlet&JSP]]></sub>
+			<sub>XML</sub>
+		</curriculumn>
+		<zipcode>01247</zipcode>
+		<addr>서울특별시 송파구</addr>
+		<age>25</age>
+	</memberInfo>
+</memList>
