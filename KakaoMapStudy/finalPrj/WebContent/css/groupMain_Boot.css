@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+<style>
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* 기본 공통 CSS */
+
+*
+{
+	font-family: GmarketSansMedium;
+	font-weight: bold;
+}
+
+.left
+{
+	margin: 10px;
+	text-align: center;
+}
+
+.center
+{
+	background-color: #ff8a3d;
+	padding: 5px;
+	margin: 10px;
+}
+
+.right	
+{
+	text-align: center;
+	margin: 10px;
+}
+
+.button
+{
+	border: solid 2px #ff8a3d;
+	border-radius: 5px;
+	color: #ff8a3d;
+	background-color: white;
+	padding: 8px;
+}
+
+.button:hover
+{
+	border: solid 2px #ffffff;
+	border-radius: 5px;
+	color: #ffffff;
+	background-color: #0c9a16;
+	padding: 8px;
+	
+}
+
+/* footer CSS */
+
+.footer
+{
+	width:100%;
+	text-align: center;
+	
+}
+
+.footer a
+{
+	padding: 20px;
+	margin: 10px;
+}
+
+/* 그룹 프로필 CSS */
+#groupProfile	
+{
+	text-align: center;
+	font-size:15pt;
+	background-color: #ff8a3d;
+	border-radius: 5px;
+	font-family: GmarketSansMedium;
+	padding: 5px;
+}	
+
+#groupProfile >img
+{
+ 	width: 85%;
+	margin: 10px;
+}
+	
+#groupProfile >span
+{
+ 	font-size: 20pt;
+ 	font-family: YClover-Bold;
+}
+
+/* 그룹원 CSS */
+#groupMember
+{
+	text-align: center;
+	font-weight: bold;
+	width: 100%;
+	border: solid 2px #ff8a3d;
+	border-radius: 5px;
+}
+
+#groupMember span
+{
+	background-color: #ff8a3d;
+	font-size: 15pt;
+	display: block;
+}
+
+#groupMember li
+{
+	list-style-type: none;
+	list-style-position:inside;
+	text-align: center;
+	font-size: 13pt;
+}
+
+/* 캐러셀 CSS */
+.carousel
+{
+	padding: 10px;
+}
+
+.carousel-caption p
+{
+	color: #ff8a3d;
+	font-weight: bold;
+	font-family: GmarketSansMedium;
+	font-size: 13pt;
+}
+.carousel-caption h3
+{
+	color: #ff8a3d;
+	font-weight: bold;
+	font-family: GmarketSansMedium;
+}
+
+/* 최신글 CSS */
+.newpost_Left
+{
+	width: 45%;
+	float: left;
+	text-align: center;
+	padding: 10px;
+}
+.newpost_Right
+{
+	width: 45%;
+	float: right;
+	text-align: center;
+	padding: 10px;
+}
+
+/* 내 프로필 CSS */
+#groupMyProfile	
+{
+	text-align: center;
+	font-size:15pt;
+	background-color: #ff8a3d;
+	border-radius: 5px;
+	font-family: GmarketSansMedium;
+	padding: 5px;
+}	
+
+#groupMyProfile >img
+{
+ 	width: 85%;
+	margin: 10px;
+}
+	
+#groupMyProfile p>span
+{
+ 	font-size: 20pt;
+ 	font-family: YClover-Bold;
+}
+
+/* 캘린더 CSS */
+#groupMyProfile th, td
+{
+	padding: 10px;
+	background-color: white;
+}
+
+table
+{
+	width: 100%;
+}
+
+
+</style>

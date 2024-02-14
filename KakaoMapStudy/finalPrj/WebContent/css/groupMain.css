@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+<style>
+
+#groupMember #list
+{
+	width: 100%;
+	background-color: #ff8a3d;
+}
+
+#groupMember li,ul
+{
+	width: 100%;
+	background-color: #fffff;
+}
+
+#groupMember
+{
+	width:95%;
+	text-align:center;
+	margin: 10px;
+	background-color: white;
+}
+
+#footer 
+{
+	text-align: center;
+}
+
+footer
+{
+	display: inline-block;
+}
+
+a
+{
+	text-align: center;
+	color: gray;
+	margin: 10px;
+}
+
+.left
+{
+	background-color: #b1b4e4;	
+	text-align: center;
+	height: 500pt;
+}
+
+#groupProfile
+{
+	background-color: #ffffff;
+	width:95%;
+	margin: 10px;
+	height: 200pt;
+}
+
+#groupProfile > img
+{
+	width: 95%;
+	height: 150pt;
+	margin: 10px;
+}
+
+
+.center
+{
+	background-color: #b1b4e4;	
+	height: 500pt;
+
+
+}
+
+.right	
+{
+	background-color: #b1b4e4;	
+	height: 500pt;
+}
+	
+</style>

@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'YClover-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/YClover-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+*
+{
+}
+
+ul
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	
+}
+
+li
+{	width: 25%;
+	float: left;
+}
+
+h1
+{
+	margin: 5px;
+    padding: 3px;
+    color: #ff8a3d;
+    font-family: YClover-Bold;
+}
+
+span
+{
+	float: right;
+}
+
+
+a.menu:link, a.menu:visited 
+{
+	display: block;
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #ff8a3d;
+	text-align: center;
+	padding: 4px;
+	font-size: 14pt;	
+}
+
+a.menu:hover , a.menu:active
+{
+	background-color: #ffffff;
+	color: #ff8a3d;
+	border: 2px solid #ff8a3d;
+	border-radius: 5px;
+
+}
+
